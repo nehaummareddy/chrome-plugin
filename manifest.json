@@ -1,0 +1,20 @@
+ {
+  "name": "Test Plugin",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Test Plugin",
+  "background": {
+    "scripts": ["background-listener.js", "service.js", "saveData.js","thirdParty/jquery.min.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title":  "click",
+    "default_icon": "hello_extensions.png",
+    "default_popup": "index.html"
+  },
+  "content_scripts": [ {
+    "matches": ["<all_urls>"],
+    "js": ["content.js", "thirdParty/jquery.min.js"]
+}],
+  "permissions": ["tabs", "activeTab", "<all_urls>"]
+}
